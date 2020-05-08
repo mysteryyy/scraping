@@ -15,6 +15,7 @@ class extract:
        dir_loc = '/var/lib/docker/volumes/data4/_data'
        k = ext().give_file(dir_loc,'daily_data')
        os.system('docker volume prune -f')
+       os.chdir('/root/dock1/dock')
        return k
 
     
@@ -24,6 +25,7 @@ class extract:
        dir_loc = '/var/lib/docker/volumes/data4/_data'
        k = ext().give_file(dir_loc,'finalkfr1')
        os.system('docker volume prune -f')
+       os.chdir('/root/dock1/dock')
        return k
 
     def del_cont(self): 

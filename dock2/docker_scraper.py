@@ -166,6 +166,15 @@ def dailydata(s,driver,date1,date2):
        pck.dump(k,d)
   driver.quit()
   return k
+def driver_act(driver):
+  driver.find_element_by_link_text('Financials').click()
+  return
+def ext_symb(pg):
+   sym = pg.find('ctag',class_='mob-hide').text.encode('ascii')
+   sym = str(sym)
+   bse = re.findall('\d+',sym[sym.find('BSE')+3:])
+   nse = re.findall('\w+',sym[sym.find('NSE')+3:])
+   return bse,nse
 def fin_data(i,driver):
     try:
             print('in here')
